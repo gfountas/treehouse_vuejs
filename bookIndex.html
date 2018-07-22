@@ -9,9 +9,12 @@
 </head>
 <body>
     <div id="bookApp">
-        <h2 v-on:click="sayHello">{{ title }}</h2>
-        <p>{{ author }} </p>
-        <p> {{ summary }} </p>
+        <h2 v-on:click="toggleShowDetails">{{ title }}  [{{ plusMinus }}]</h2>
+        <div v-show="showDetails">
+            <p>{{ author }} </p>
+            <p> {{ summary }} </p>
+        </div>
+        
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="bookApp.js"></script>
