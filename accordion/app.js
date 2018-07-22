@@ -54,11 +54,24 @@ const app = new Vue({
     el: '#media-list',
     data: {
       title: 'Treehouse Public Library',
-      mediaList: media
+      mediaList: media,
+      type:''
     },
     methods: {
       toggleShowDetail: function(media) {
         media.showDetail = !media.showDetail;
+      },
+      filterMediaItems: function() {
+        console.log(event.target.value);
+        this.type = event.target.value;
+      }
+    },
+    computed: {
+      uniqueItemList: function(){
+        mediaSet= new Set();
+        media.forEach(item=>mediaSet.add(item.type));
+        console.log(mediaSet);
+        return Array.from(mediaSet);
       }
     }
   });
