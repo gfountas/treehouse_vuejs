@@ -11,6 +11,10 @@ const example = new Vue({
     data: {
         title: "Hello",
         name: "Dollie",
-        message: "This is a message"
+        message: "This is a message",
+        img: {
+            src: "https://placeimg.com/200/200/animals",
+            alt: "A pretty puppy"
+        }
     }
 });
