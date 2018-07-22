@@ -62,15 +62,15 @@ const app = new Vue({
         media.showDetail = !media.showDetail;
       },
       filterMediaItems: function() {
-        console.log(event.target.value);
+        
         this.type = event.target.value;
       }
     },
     computed: {
       uniqueItemList: function(){
-        mediaSet= new Set();
+        let mediaSet= new Set();
         media.forEach(item=>mediaSet.add(item.type));
-        console.log(mediaSet);
+        
         return Array.from(mediaSet);
       }
     }
